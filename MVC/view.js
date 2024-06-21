@@ -103,25 +103,4 @@ class View {
       eventItem.remove();
     }
   }
-
-  bindAddEvent(handler) {
-    this.eventForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const newEvent = {
-        name: this.eventForm.eventName.value,
-        start: this.eventForm.startDate.value,
-        end: this.eventForm.endDate.value,
-      };
-      handler(newEvent);
-      this.eventForm.reset();
-      this.eventForm.style.display = 'none';
-    });
-
-    const cancelBtn = this.eventForm.querySelector('.cancel-btn');
-    cancelBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.eventForm.reset();
-      this.eventForm.style.display = 'none';
-    });
-  }
 }

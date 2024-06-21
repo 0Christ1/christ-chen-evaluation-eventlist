@@ -36,5 +36,6 @@ const eventAPI = ((param) => {
     fetchEventsAPI,
     postEventsAPI,
     deleteEventsAPI,
+    putEventsAPI,
   };
 })();
