@@ -16,14 +16,30 @@ class Controller {
   }
 
   setUpEvents() {
+    this.#view.addNewEventBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.#view.showForm();
+    });
     this.addEvent();
-    this.editEvent();
-    this.delEvent();
+    this.updateEvent();
+    this.saveEvent();
+    this.deleteEvent(id);
   }
 
   fetchEvents() {
     eventAPI.fetchEventsAPI().then((events) => {
-      this.#model.setEvent(events);
+      this.#model.setEvents(events);
+      events.forEach((event) => {
+        this.#view.renderEventElement(event);
+      });
     });
+  }
+
+  addEvent() {
+    eventAPI.postEventsAPI().then(() => {});
+  }
+
+  deleteEvent(id) {
+    eventAPI.deleteEventsAPI(id).then(() => {});
   }
 }

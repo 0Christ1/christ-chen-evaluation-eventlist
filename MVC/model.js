@@ -21,4 +21,13 @@ class Model {
       event.id !== id;
     });
   }
+
+  updateEvent(updatedEvent) {
+    const index = this.#events.findIndex(
+      (event) => event.id === updatedEvent.id
+    );
+    if (index !== -1) {
+      this.#events[index] = updatedEvent;
+    }
+  }
 }
