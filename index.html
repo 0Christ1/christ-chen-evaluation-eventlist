@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <button class="add-event-btn">Add New Event</button>
+      <div class="event-container">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Event</th>
+              <th scope="col">Start</th>
+              <th scope="col">End</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="event-list">
+            <tr class="event-item">
+              <td class="event"></td>
+              <td class="start-date"></td>
+              <td class="end-data"></td>
+              <td>
+                <button class="edit-btn">E</button>
+                <button class="delete-btn">D</button>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td class="event">Music Festival</td>
+              <td class="start-date">2023-01-20</td>
+              <td class="end-data">2023-01-20</td>
+              <td>
+                <button class="edit-btn">+</button>
+                <button class="delete-btn">-</button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="API/eventAPI.js"></script>
+    <script src="MVC/view.js"></script>
+    <script src="MVC/model.js"></script>
+    <script src="MVC/controller.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
