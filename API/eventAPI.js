@@ -1,12 +1,12 @@
-const eventAPI = ((param) => {
+const eventAPI = (() => {
   // API server
   const BASE_EVENT_API = 'http://localhost:3000/events';
 
   const fetchEventsAPI = async () => {
-    return fetch(BASE_EVENT_API).then((res) => res.json());
+    return await fetch(BASE_EVENT_API).then((res) => res.json());
   };
 
-  const postEventsAPI = async (newEvent) => {
+  const postEventAPI = async (newEvent) => {
     return fetch(BASE_EVENT_API, {
       method: 'POST',
       headers: {
@@ -16,8 +16,8 @@ const eventAPI = ((param) => {
     }).then((res) => res.json());
   };
 
-  const putEventsAPI = async (id, newEvent) => {
-    return fetch(`${BASE_EVENT_API}/${id}`, {
+  const putEventAPI = async (id, newEvent) => {
+    return await fetch(`${BASE_EVENT_API}/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -26,16 +26,16 @@ const eventAPI = ((param) => {
     }).then((res) => res.json());
   };
 
-  const deleteEventsAPI = async (eventId) => {
-    return fetch(`${BASE_EVENT_API}/${eventId}`, {
+  const deleteEventAPI = async (id) => {
+    return fetch(`${BASE_EVENT_API}/${id}`, {
       method: 'DELETE',
-    });
+    }).then((res) => res.json());
   };
 
   return {
     fetchEventsAPI,
-    postEventsAPI,
-    deleteEventsAPI,
-    putEventsAPI,
+    postEventAPI,
+    deleteEventAPI,
+    putEventAPI,
   };
 })();
